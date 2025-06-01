@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>养老院管理系统模块概览</title>
+    <link rel="stylesheet" href="src/assets/main.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .module-card h3 {
+            color: #3498db;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .tech-stack {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .tech-stack ul {
+            columns: 2;
+        }
+
+        .interaction-flow {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>养老院人员管理系统</h1>
+        <p>基于Vue.js的前端框架，提供全面的养老院人员管理解决方案</p>
+    </header>
+
+    <section class="module-grid">
+        <div class="module-card">
+            <h3>认证模块</h3>
+            <ul>
+                <li>登录页面（RSA加密）</li>
+                <li>Token管理</li>
+                <li>自动刷新Token</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>用户管理</h3>
+            <ul>
+                <li>用户列表（分页/搜索）</li>
+                <li>用户详情页</li>
+                <li>角色权限控制</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>人员管理</h3>
+            <ul>
+                <li>人员分类筛选</li>
+                <li>健康档案管理</li>
+                <li>照片上传功能</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>护理计划</h3>
+            <ul>
+                <li>计划列表（分页）</li>
+                <li>计划接取/转交</li>
+                <li>任务分配面板</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>护理记录</h3>
+            <ul>
+                <li>记录时间轴视图</li>
+                <li>快速录入表单</li>
+                <li>修改历史对比</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>健康数据</h3>
+            <ul>
+                <li>图表展示趋势</li>
+                <li>健康档案编辑</li>
+                <li>数据导出功能</li>
+            </ul>
+        </div>
+
+        <div class="module-card">
+            <h3>提醒管理</h3>
+            <ul>
+                <li>提醒列表分类</li>
+                <li>周期提醒设置</li>
+                <li>实时通知组件</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2>技术栈</h2>
+        <ul>
+            <li><strong>UI框架</strong>: Element UI / Vuetify</li>
+            <li><strong>可视化</strong>: ECharts / Chart.js</li>
+            <li><strong>路由管理</strong>: vue-router</li>
+            <li><strong>状态管理</strong>: vuex</li>
+            <li><strong>HTTP请求</strong>: axios</li>
+            <li><strong>安全</strong>: jsencrypt (RSA加密)</li>
+            <li><strong>日期处理</strong>: dayjs</li>
+        </ul>
+    </section>
+
+    <section class="interaction-flow">
+        <h2>关键交互流程示例</h2>
+        <h3>护理计划接取流程</h3>
+        <ol>
+            <li>护理工在"可接取计划"列表点击"接取"按钮</li>
+            <li>调用API: POST /care_plan/{plan_id}/accept</li>
+            <li>成功后自动刷新列表，计划移入"我的计划"</li>
+        </ol>
+
+        <h3>健康数据录入流程</h3>
+        <ol>
+            <li>在人员详情页点击"添加健康记录"</li>
+            <li>填写表单并提交</li>
+            <li>自动更新图表和档案页</li>
+        </ol>
+    </section>
+</body>
+
+</html>

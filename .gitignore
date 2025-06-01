@@ -1,0 +1,10 @@
+.history/**
+GoldenYearsManager/.vscode/**
+GoldenYearsManager/node_modules/**
+GoldenYearsManager/out/**
+GoldenYearsManager/src/main/resources/static/js/libs/**
+GoldenYearsManager/src/main/resources/static/js/libs/jquery-3.3.1.min.js
+GoldenYearsManager/src/main/resources/static/js/libs/jquery-3.3.1.slim.min.js
+
+backend/__pycache__/**
+backend/.env
